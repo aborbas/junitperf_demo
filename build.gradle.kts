@@ -6,6 +6,7 @@ plugins {
 	kotlin("jvm") version "1.3.50"
 	kotlin("plugin.spring") version "1.3.50"
 	kotlin("plugin.jpa") version "1.3.50"
+
 }
 
 group = "com.junitperf"
@@ -34,10 +35,8 @@ dependencies {
 	implementation("com.github.noconnor:junitperf:1.15.0")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.h2database:h2")
-	testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.2")
-	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.4.2")
-	testImplementation("org.junit.jupiter:junit-jupiter-params:5.4.2")
 	testImplementation("io.kotlintest:kotlintest-assertions:3.3.2")
+	testImplementation("org.jsmart:zerocode-tdd-jupiter:1.3.16")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
