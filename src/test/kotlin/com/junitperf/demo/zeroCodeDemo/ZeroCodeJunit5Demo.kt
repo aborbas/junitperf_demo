@@ -1,5 +1,4 @@
-import com.junitperf.demo.IntegrationTest
-import com.junitperf.demo.zeroCodeDemo.DummyJunitTests
+import com.junitperf.demo.zeroCodeDemo.IntegrationTest
 import org.jsmart.zerocode.core.domain.LoadWith
 import org.jsmart.zerocode.core.domain.TestMapping
 import org.jsmart.zerocode.core.domain.TestMappings

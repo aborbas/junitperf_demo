@@ -1,4 +1,4 @@
-package com.junitperf.demo
+package com.junitperf.demo.zeroCodeDemo
 
 import io.kotlintest.shouldBe
 import org.junit.jupiter.api.Test
@@ -10,27 +10,11 @@ import org.springframework.boot.test.web.client.getForEntity
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class IntegrationTest(@Autowired val restTemplate: TestRestTemplate) {
 
-//    @Rule
-//    var rule = JUnitPerfAsyncRule()
-//
-//    private var pool: ExecutorService? = null
-//
-//    @BeforeClass
-//    fun setup() {
-//        pool = Executors.newFixedThreadPool(100)
-//    }
-//
-//    @AfterClass
-//    fun teardown() {
-//        pool!!.shutdownNow()
-//    }
-
     @Test
     fun assertSlowAnswerText() {
         val entity = restTemplate.getForEntity<String>("/slow")
         entity.statusCode.value() shouldBe 200
         entity.body shouldBe "Slow answer"
-
     }
 
     @Test
@@ -45,7 +29,6 @@ class IntegrationTest(@Autowired val restTemplate: TestRestTemplate) {
         val entity = restTemplate.getForEntity<String>("/quick")
         entity.statusCode.value() shouldBe 200
         entity.body shouldBe "Quick answer"
-
     }
 
 }
